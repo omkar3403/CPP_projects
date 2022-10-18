@@ -12,6 +12,12 @@ class Rectangel {
 		Rectangel() {
 			len = 0; bre = 0;
 		}
+		// test/dev input
+		void input(int l, int b){
+			len = l; bre = b;
+			std::cout<<"RECTANGLE:"<<std::endl;
+			std::cout<< " len: "<< len<< std::endl<< " bre: "<< bre<< std::endl;
+		}
 		// function to get input from user
 		void input() {
 			std::cout<< "Enter length: "; 
@@ -46,11 +52,28 @@ class Rectangel {
 			
 		}
 };
+
+class Box {
+private:
+	double len, bre, hei;
+public:
+	Box(){
+		len=0; bre=0; hei=0;
+	}
+	void input() {
+		std::cout<< "Enter len: ";
+		std::cin>>len;
+		std::cout<< "Enter bre: ";
+		std::cin>>bre;
+		std::cout<< "Enter hei: ";
+		std::cin>>hei;
+	}
+};
 // function to quickly test for the time of development
 void quicktest(){
 	
 	Rectangel r;
-	r.input();
+	r.input(5, 2);
 	r.area();
 	r.perimeter();
 	r.diagonal();
