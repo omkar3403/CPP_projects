@@ -1,35 +1,43 @@
+// UNDER DEVELOPMENT>>>+++---
 // calculating different shapes
 #include<iostream>
 #include<cmath>
+// class for measuring Rectangles
 class Rectangel {
 	private:
-		double len, bre;
-		double Area, Perimeter, Diagonal;
+		double len, bre; // input variables of Rectangel length and breadth
+		double Area, Perimeter, Diagonal; // result variables
 	public:
+		// default constructor OR default values
 		Rectangel() {
 			len = 0; bre = 0;
 		}
+		// function to get input from user
 		void input() {
 			std::cout<< "Enter length: "; 
 			std::cin>>len;
 			std::cout<< "Enter breadth: ";
 			std::cin>>bre;
 		}
+		// function to calculate AREA
 		void area() {
 			double Ar;
-			Ar = len * bre;
+			Ar = len * bre; // a=l+b
 			Area = Ar;
 		}
+		// function to calculate PEIRMETER
 		void perimeter() {
 			double Peri;
-			Peri = 2 * (len + bre);
+			Peri = 2 * (len + bre); // p=2(l+b)
 			Perimeter = Peri;
 		}
+		// function to calculate DIAGONAL
 		void diagonal() {
 			double Diag;
-			Diag = sqrt((pow(len, 2) + pow(bre, 2)));
+			Diag = sqrt((pow(len, 2) + pow(bre, 2))); // formula of diagonal
 			Diagonal = Diag;
 		}
+		// function to show all results in structured manner
 		void show() {
 			std::cout<< "Rectangle Measurements :-";
 			std::cout<< "\n Area: "<< Area;
@@ -38,7 +46,7 @@ class Rectangel {
 			
 		}
 };
-
+// function to quickly test for the time of development
 void quicktest(){
 	
 	Rectangel r;
