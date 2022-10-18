@@ -5,7 +5,7 @@
 // class for measuring Rectangles
 class Rectangel {
 	private:
-		double len, bre; // input variables of Rectangel length and breadth
+		double len, bre; // input variables for Rectangel length and breadth
 		double Area, Perimeter, Diagonal; // result variables
 	public:
 		// default constructor OR default values
