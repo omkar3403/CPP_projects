@@ -2,11 +2,12 @@
 // calculating different shapes
 #include<iostream>
 #include<cmath>
-// class for measuring Rectangles
+
+			// class for measuring Rectangles
 class Rectangel {
 private:
 	double len, bre; // input variables for Rectangel length and breadth
-	double Area, Perimeter, Diagonal; // result variables
+	double rArea, rPerimeter, rDiagonal; // result variables
 public:
 	// default constructor OR default values
 	Rectangel() {
@@ -15,8 +16,6 @@ public:
 	// temp func test/dev input
 	void input(int l, int b){
 		len = l; bre = b;
-		std::cout<<"RECTANGLE:"<<std::endl;
-		std::cout<< " len: "<< len<< std::endl<< " bre: "<< bre<< std::endl;
 	}
 	// function to get input from user
 	void input() {
@@ -29,38 +28,43 @@ public:
 	void area() {
 		double Ar;
 		Ar = len * bre; // a=l+b
-		Area = Ar;
+		rArea = Ar;
 	}
 	// function to calculate PEIRMETER
 	void perimeter() {
 		double Peri;
 		Peri = 2 * (len + bre); // p=2(l+b)
-		Perimeter = Peri;
+		rPerimeter = Peri;
 	}
 	// function to calculate DIAGONAL
 	void diagonal() {
 		double Diag;
 		Diag = sqrt((pow(len, 2) + pow(bre, 2))); // formula of diagonal
-		Diagonal = Diag;
+		rDiagonal = Diag;
 	}
-	// function to show all results in structured manner
-	void show() {
-		std::cout<< "Rectangle Measurements :-";
-		std::cout<< "\n Area: "<< Area;
-		std::cout<< "\n Perimeter: "<< Perimeter;
-		std::cout<< "\n Diagonal: "<< Diagonal;
+	// function to disp all results in structured manner
+	void disp() {
+		std::cout<< "\n\nRectangle Measurements :-";
+		std::cout<< "\n Area: "<< rArea;
+		std::cout<< "\n Perimeter: "<< rPerimeter;
+		std::cout<< "\n Diagonal: "<< rDiagonal;
 		
 	}
 };
-// class for measuring boxes
-class Box {
+
+			// class for measuring Cuboides
+class Cuboid {
 private:
 	double len, bre, hei; // input variables
-	double Volume, TotalSurfaceArea; // result variable
+	double cuVolume, cuSurfaceArea, cuDiagonal; // result variable
 public:
 	// default constructor/values
-	Box(){
+	Cuboid(){
 		len=0; bre=0; hei=0;
+	}
+	// test/dev input
+	void input(double l, double b, double h) {
+		len = l; bre = b; hei = h;
 	}
 	// function to get input form user
 	void input() {
@@ -71,34 +75,99 @@ public:
 		std::cout<< "Enter hei: ";
 		std::cin>>hei;
 	}
-	// function to calculate volume of a box
+	// function to calculate volume of a Cuboid
 	void volume(){
 		double vo;
 		vo = len * bre * hei;
-		Volume = vo;
+		cuVolume = vo;
 	}
 	// function to calculate total surface area
-	void totalsurfacearea() {
-		double tsa;
-		tsa =  2 * (len*bre + bre*hei + hei*len); // 2(lb+bh+hl) cueboid
-		TotalSurfaceArea = tsa;
+	void surfacearea() {
+		double sa;
+		sa =  2 * (len*bre + bre*hei + hei*len); // 2(lb+bh+hl) cuboid
+		cuSurfaceArea = sa;
 	}
 	// function to calculate surface area
-	void surfacearea() {
-		
+	void diagonal() {
+		double diag;
+		diag = sqrt(pow(len,2) + pow(bre,2) + pow(hei,2)); // formula of diagonal
+		cuDiagonal = diag;
 	}
-	// function to show the results
-	void show() {
-		std::cout<<Volume;
+	// function to disp the results
+	void disp() {
+		std::cout<< "\n\nCuboid Measurements :-";
+		std::cout<< "\n Volume: "<< cuVolume;
+		std::cout<< "\n SurfaceArea: "<< cuSurfaceArea;
+		std::cout<< "\n Diagonal: "<< cuDiagonal;
 	}
 };
+
+			// class for measuring cube
+class Cube {
+protected:
+	double Area; // input variable
+	double Volume, SurfaceArea, Diagonal; // result variables
+public:
+	Cube() {
+		Area = 0;
+	}
+	// function to get input form user
+	void input() {
+		std::cout<<"Enter area: ";
+		std::cin>>Area;
+	}
+		// test input func
+	void input(double a){
+		Area = a;
+	}
+	// function to calculate volume
+	void volume(){
+		double vol;
+		vol = pow(Area,3); // a^3
+		Volume = vol;
+	}
+	// function to claculate surface area
+	void surfacearea() {
+		double sa;
+		sa = 6 * pow(Area, 2); // 6a^3
+		SurfaceArea = sa;
+	}
+	// function to calculate diagonal
+	void diagonal() {
+		double diag;
+		diag = Area * sqrt(3);
+		Diagonal = diag;
+	}
+	void disp() {
+		std::cout<< "\n\nCube Measurements :-";
+		std::cout<< "\n Volume: "<< Volume;
+		std::cout<< "\n SurfaceArea: "<< SurfaceArea;
+		std::cout<< "\n Diagonal: "<< Diagonal;
+	}
+};
+
 // function to quickly test for the time of development
 void quicktest(){
+	system("cls"); // to clear windows command prompt
+	//system("clear"); // to clear linux console
+
+	// cube test//
+	Cube c;
+	c.input(3);
+	c.volume();
+	c.surfacearea();
+	c.diagonal();
+	c.disp();
+
+
+	// Cuboid test //
+	Cuboid b;
+	b.input(2, 4, 3);
+	b.volume();
+	b.surfacearea();
+	b.diagonal();
+	b.disp();
 	
-	// Box test //
-	Box b;
-	b.input();
-	//b.volume();
 
 	// Rectangel test //
 	Rectangel r;
@@ -106,7 +175,7 @@ void quicktest(){
 	r.area();
 	r.perimeter();
 	r.diagonal();
-	r.show();
+	r.disp();
 }
 int main() {
 	
