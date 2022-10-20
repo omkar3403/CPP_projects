@@ -55,11 +55,14 @@ public:
 // class for measuring boxes
 class Box {
 private:
-	double len, bre, hei;
+	double len, bre, hei; // input variables
+	double Volume, TotalSurfaceArea; // result variable
 public:
+	// default constructor/values
 	Box(){
 		len=0; bre=0; hei=0;
 	}
+	// function to get input form user
 	void input() {
 		std::cout<< "Enter len: ";
 		std::cin>>len;
@@ -68,17 +71,42 @@ public:
 		std::cout<< "Enter hei: ";
 		std::cin>>hei;
 	}
+	// function to calculate volume of a box
+	void volume(){
+		double vo;
+		vo = len * bre * hei;
+		Volume = vo;
+	}
+	// function to calculate total surface area
+	void totalsurfacearea() {
+		double tsa;
+		tsa =  2 * (len*bre + bre*hei + hei*len); // 2(lb+bh+hl) cueboid
+		TotalSurfaceArea = tsa;
+	}
+	// function to calculate surface area
+	void surfacearea() {
+		
+	}
+	// function to show the results
+	void show() {
+		std::cout<<Volume;
+	}
 };
 // function to quickly test for the time of development
 void quicktest(){
 	
+	// Box test //
+	Box b;
+	b.input();
+	//b.volume();
+
+	// Rectangel test //
 	Rectangel r;
 	r.input(5, 2);
 	r.area();
 	r.perimeter();
 	r.diagonal();
 	r.show();
-
 }
 int main() {
 	
