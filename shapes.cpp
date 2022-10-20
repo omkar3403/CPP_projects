@@ -44,11 +44,57 @@ public:
 	}
 	// function to disp all results in structured manner
 	void disp() {
-		std::cout<< "\n\nRectangle Measurements :-";
+		std::cout<< "\nRectangle Measurements :-";
 		std::cout<< "\n Area: "<< rArea;
 		std::cout<< "\n Perimeter: "<< rPerimeter;
 		std::cout<< "\n Diagonal: "<< rDiagonal;
+		std::cout<<std::endl;
 		
+	}
+};
+
+			// class for measuring squares
+class Square {
+protected:
+	double len; // input variable
+	double Area, Perimeter, Diagonal; // result variable
+public:
+	Square() {
+		len = 0;
+	}
+	void input() {
+		std::cout<<"Enter length: ";
+		std::cin>>len;
+	}
+	// test/dev input
+	void input(double l) {
+		len = l;
+	}
+	// function to calculate area
+	void area() {
+		double a;
+		a = pow(len,2); // a^2
+		Area = a;
+	}
+	// function to calculate perimeter 
+	void perimeter() {
+		double p;
+		p = 4 * len; // 4*a
+		Perimeter = p;
+	}
+	// function to claculate diagonal
+	void diagonal() {
+		double diag;
+		diag = len * sqrt(2); // diagonal formula
+		Diagonal = diag;
+	}
+	// function to display result
+	void disp() {
+		std::cout<< "\nSquare Measurements :-";
+		std::cout<< "\n Area: "<< Area;
+		std::cout<< "\n Perimeter: "<< Perimeter;
+		std::cout<< "\n Diagonal: "<< Diagonal;
+		std::cout<<std::endl;
 	}
 };
 
@@ -95,10 +141,11 @@ public:
 	}
 	// function to disp the results
 	void disp() {
-		std::cout<< "\n\nCuboid Measurements :-";
+		std::cout<< "\nCuboid Measurements :-";
 		std::cout<< "\n Volume: "<< cuVolume;
 		std::cout<< "\n SurfaceArea: "<< cuSurfaceArea;
 		std::cout<< "\n Diagonal: "<< cuDiagonal;
+		std::cout<<std::endl;
 	}
 };
 
@@ -139,10 +186,11 @@ public:
 		Diagonal = diag;
 	}
 	void disp() {
-		std::cout<< "\n\nCube Measurements :-";
+		std::cout<< "\nCube Measurements :-";
 		std::cout<< "\n Volume: "<< Volume;
 		std::cout<< "\n SurfaceArea: "<< SurfaceArea;
 		std::cout<< "\n Diagonal: "<< Diagonal;
+		std::cout<<std::endl;
 	}
 };
 
@@ -150,6 +198,15 @@ public:
 void quicktest(){
 	system("cls"); // to clear windows command prompt
 	//system("clear"); // to clear linux console
+
+	// square test//
+	Square s;
+	s.input(5);
+	s.area();
+	s.perimeter();
+	s.diagonal();
+	s.disp();
+
 
 	// cube test//
 	Cube c;
@@ -176,6 +233,8 @@ void quicktest(){
 	r.perimeter();
 	r.diagonal();
 	r.disp();
+
+	system("pause"); // to keep the command prompt open after execution
 }
 int main() {
 	
