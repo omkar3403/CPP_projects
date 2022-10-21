@@ -1,285 +1,336 @@
 // UNDER DEVELOPMENT>>>+++---
 // calculating different shapes
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 using namespace std;
 const double Pi = 3.14159;
 
-		// class for measuring Rectangles
-class Rectangel {
+// class for measuring Rectangles
+class Rectangel
+{
 protected:
-	double len, bre; // input variables for Rectangel length and breadth
+	double len, bre;					 // input variables for Rectangel length and breadth
 	double rArea, rPerimeter, rDiagonal; // result variables
 public:
 	// default constructor OR default values
-	Rectangel() {
-		len = 0; bre = 0;
+	Rectangel()
+	{
+		len = 0;
+		bre = 0;
 	}
 	// temp func test/dev input
-	void input(int l, int b){
-		len = l; bre = b;
+	void input(int l, int b)
+	{
+		len = l;
+		bre = b;
 	}
 	// function to get input from user
-	void input() {
-		cout<< "Enter length: "; 
-		cin>>len;
-		cout<< "Enter breadth: ";
-		cin>>bre;
+	void input()
+	{
+		cout << "Enter length: ";
+		cin >> len;
+		cout << "Enter breadth: ";
+		cin >> bre;
 	}
 	// function to calculate AREA
-	void area() {
+	void area()
+	{
 		double Ar;
 		Ar = len * bre; // a=l+b
 		rArea = Ar;
 	}
 	// function to calculate PEIRMETER
-	void perimeter() {
+	void perimeter()
+	{
 		double Peri;
 		Peri = 2 * (len + bre); // p=2(l+b)
 		rPerimeter = Peri;
 	}
 	// function to calculate DIAGONAL
-	void diagonal() {
+	void diagonal()
+	{
 		double Diag;
 		Diag = sqrt((pow(len, 2) + pow(bre, 2))); // formula of diagonal
 		rDiagonal = Diag;
 	}
 	// function to disp all results in structured manner
-	void disp() {
-		cout<< "\nRectangle Measurements :-";
-		cout<< "\n Area: "<< rArea;
-		cout<< "\n Perimeter: "<< rPerimeter;
-		cout<< "\n Diagonal: "<< rDiagonal;
-		cout<<endl;
-		
+	void disp()
+	{
+		cout << "\nRectangle Measurements :-";
+		cout << "\n Area: " << rArea;
+		cout << "\n Perimeter: " << rPerimeter;
+		cout << "\n Diagonal: " << rDiagonal;
+		cout << endl;
 	}
 };
 
-		// class for measuring squares
-class Square {
+// class for measuring squares
+class Square
+{
 protected:
-	double len; // input variable
+	double len;						  // input variable
 	double Area, Perimeter, Diagonal; // result variable
 public:
-	Square() {
+	Square()
+	{
 		len = 0;
 	}
-	void input() {
-		cout<<"Enter length: ";
-		cin>>len;
+	void input()
+	{
+		cout << "Enter length: ";
+		cin >> len;
 	}
 	// test/dev input
-	void input(double l) {
+	void input(double l)
+	{
 		len = l;
 	}
 	// function to calculate area
-	void area() {
+	void area()
+	{
 		double a;
-		a = pow(len,2); // a^2
+		a = pow(len, 2); // a^2
 		Area = a;
 	}
-	// function to calculate perimeter 
-	void perimeter() {
+	// function to calculate perimeter
+	void perimeter()
+	{
 		double p;
 		p = 4 * len; // 4*a
 		Perimeter = p;
 	}
 	// function to claculate diagonal
-	void diagonal() {
+	void diagonal()
+	{
 		double diag;
 		diag = len * sqrt(2); // diagonal formula
 		Diagonal = diag;
 	}
 	// function to display result
-	void disp() {
-		cout<< "\nSquare Measurements :-";
-		cout<< "\n Area: "<< Area;
-		cout<< "\n Perimeter: "<< Perimeter;
-		cout<< "\n Diagonal: "<< Diagonal;
-		cout<<endl;
+	void disp()
+	{
+		cout << "\nSquare Measurements :-";
+		cout << "\n Area: " << Area;
+		cout << "\n Perimeter: " << Perimeter;
+		cout << "\n Diagonal: " << Diagonal;
+		cout << endl;
 	}
 };
 
-		// class for measuring cricle
-class Circle {
+// class for measuring cricle
+class Circle
+{
 protected:
-	double radius; // input variable
+	double radius;				// input variable
 	double Area, Circumference; // result variables
 public:
 	// default value/constructor
-	Circle() {
+	Circle()
+	{
 		radius = 0;
 	}
 	// test/dev input func
-	void input(double r) {
+	void input(double r)
+	{
 		radius = r;
 	}
 	// function to get input form user
-	void input() {
-		cout<<"Enter radius: ";
+	void input()
+	{
+		cout << "Enter radius: ";
 	}
 	// faunction to calculate area
-	void area() {
+	void area()
+	{
 		double a;
 		a = Pi * pow(radius, 2);
 		Area = a;
 	}
-	// function to claculate 
-	void circumference() {
+	// function to claculate
+	void circumference()
+	{
 		double cir;
 		cir = 2 * Pi * radius;
 		Circumference = cir;
 	}
 	// function to display results
-	void disp() {
-		cout<< "\nCircle Measurements :-";
-		cout<< "\n Area: "<< Area;
-		cout<< "\n Circumference: "<< Circumference;
-		cout<<endl;
+	void disp()
+	{
+		cout << "\nCircle Measurements :-";
+		cout << "\n Area: " << Area;
+		cout << "\n Circumference: " << Circumference;
+		cout << endl;
 	}
 };
 
-		// class for measuring Cuboides
-class Cuboid {
+// class for measuring Cuboides
+class Cuboid
+{
 protected:
-	double len, bre, hei; // input variables
+	double len, bre, hei;						// input variables
 	double cuVolume, cuSurfaceArea, cuDiagonal; // result variable
 public:
 	// default constructor/values
-	Cuboid(){
-		len=0; bre=0; hei=0;
+	Cuboid()
+	{
+		len = 0;
+		bre = 0;
+		hei = 0;
 	}
 	// test/dev input
-	void input(double l, double b, double h) {
-		len = l; bre = b; hei = h;
+	void input(double l, double b, double h)
+	{
+		len = l;
+		bre = b;
+		hei = h;
 	}
 	// function to get input form user
-	void input() {
-		cout<< "Enter len: ";
-		cin>>len;
-		cout<< "Enter bre: ";
-		cin>>bre;
-		cout<< "Enter hei: ";
-		cin>>hei;
+	void input()
+	{
+		cout << "Enter len: ";
+		cin >> len;
+		cout << "Enter bre: ";
+		cin >> bre;
+		cout << "Enter hei: ";
+		cin >> hei;
 	}
 	// function to calculate volume of a Cuboid
-	void volume(){
+	void volume()
+	{
 		double vo;
 		vo = len * bre * hei;
 		cuVolume = vo;
 	}
 	// function to calculate total surface area
-	void surfacearea() {
+	void surfacearea()
+	{
 		double sa;
-		sa =  2 * (len*bre + bre*hei + hei*len); // 2(lb+bh+hl) cuboid
+		sa = 2 * (len * bre + bre * hei + hei * len); // 2(lb+bh+hl) cuboid
 		cuSurfaceArea = sa;
 	}
 	// function to calculate surface area
-	void diagonal() {
+	void diagonal()
+	{
 		double diag;
-		diag = sqrt(pow(len,2) + pow(bre,2) + pow(hei,2)); // formula of diagonal
+		diag = sqrt(pow(len, 2) + pow(bre, 2) + pow(hei, 2)); // formula of diagonal
 		cuDiagonal = diag;
 	}
 	// function to disp the results
-	void disp() {
-		cout<< "\nCuboid Measurements :-";
-		cout<< "\n Volume: "<< cuVolume;
-		cout<< "\n SurfaceArea: "<< cuSurfaceArea;
-		cout<< "\n Diagonal: "<< cuDiagonal;
-		cout<<endl;
+	void disp()
+	{
+		cout << "\nCuboid Measurements :-";
+		cout << "\n Volume: " << cuVolume;
+		cout << "\n SurfaceArea: " << cuSurfaceArea;
+		cout << "\n Diagonal: " << cuDiagonal;
+		cout << endl;
 	}
 };
 
-		// class for measuring cube
-class Cube {
+// class for measuring cube
+class Cube
+{
 protected:
-	double Area; // input variable
+	double Area;						  // input variable
 	double Volume, SurfaceArea, Diagonal; // result variables
 public:
-	Cube() {
+	Cube()
+	{
 		Area = 0;
 	}
 	// function to get input form user
-	void input() {
-		cout<<"Enter area: ";
-		cin>>Area;
+	void input()
+	{
+		cout << "Enter area: ";
+		cin >> Area;
 	}
-		// test input func
-	void input(double a){
+	// test input func
+	void input(double a)
+	{
 		Area = a;
 	}
 	// function to calculate volume
-	void volume(){
+	void volume()
+	{
 		double vol;
-		vol = pow(Area,3); // a^3
+		vol = pow(Area, 3); // a^3
 		Volume = vol;
 	}
 	// function to claculate surface area
-	void surfacearea() {
+	void surfacearea()
+	{
 		double sa;
 		sa = 6 * pow(Area, 2); // 6a^3
 		SurfaceArea = sa;
 	}
 	// function to calculate diagonal
-	void diagonal() {
+	void diagonal()
+	{
 		double diag;
 		diag = Area * sqrt(3);
 		Diagonal = diag;
 	}
-	void disp() {
-		cout<< "\nCube Measurements :-";
-		cout<< "\n Volume: "<< Volume;
-		cout<< "\n SurfaceArea: "<< SurfaceArea;
-		cout<< "\n Diagonal: "<< Diagonal;
-		cout<<endl;
+	void disp()
+	{
+		cout << "\nCube Measurements :-";
+		cout << "\n Volume: " << Volume;
+		cout << "\n SurfaceArea: " << SurfaceArea;
+		cout << "\n Diagonal: " << Diagonal;
+		cout << endl;
 	}
 };
 
-		// class to measure sphere
-class Sphere {
+// class to measure sphere
+class Sphere
+{
 protected:
-	double radius; // input variable
+	double radius;				// input variable
 	double SurfaceArea, Volume; // result variable
 public:
 	// default value/constructor
-	Sphere(){
+	Sphere()
+	{
 		radius = 0;
 	}
 	// test/dev input func
-	void input(double ra) {
+	void input(double ra)
+	{
 		radius = ra;
 	}
 	// function to get input from user
-	void input() {
-		cout<< "Enter radius: ";
-		cin>> radius;
+	void input()
+	{
+		cout << "Enter radius: ";
+		cin >> radius;
 	}
 	// function to calculate volume
-	void volume() {
+	void volume()
+	{
 		double vol;
-		vol = 4 / 3 * Pi * pow(radius,3); // 4/3*Pi*pow(r,3)
+		vol = 4 / 3 * Pi * pow(radius, 3); // 4/3*Pi*pow(r,3)
 		Volume = vol;
 	}
 	// function to claculate surface area
-	void surface() {
+	void surface()
+	{
 		double sa;
-		sa = 4 * Pi * pow(radius,2); // 4*Pi*r^2
+		sa = 4 * Pi * pow(radius, 2); // 4*Pi*r^2
 		SurfaceArea = sa;
 	}
 	// function to display results
-	void disp() {
-		cout<< "\nSphere Measurements :-";
-		cout<< "\n Volume: "<< Volume;
-		cout<< "\n SurfaceArea: "<< SurfaceArea;
-		cout<<endl;
+	void disp()
+	{
+		cout << "\nSphere Measurements :-";
+		cout << "\n Volume: " << Volume;
+		cout << "\n SurfaceArea: " << SurfaceArea;
+		cout << endl;
 	}
-
 };
 
 // function to quickly test for the time of development
-void quicktest(){
+void quicktest()
+{
 	system("cls"); // to clear windows command prompt
-	//system("clear"); // to clear linux console
+	// system("clear"); // to clear linux console
 
 	// test Square //
 	Square sq;
@@ -289,7 +340,6 @@ void quicktest(){
 	sq.diagonal();
 	sq.disp();
 
-
 	// test Rectangel //
 	Rectangel r;
 	r.input(5, 2);
@@ -298,14 +348,12 @@ void quicktest(){
 	r.diagonal();
 	r.disp();
 
-
 	// test circle //
 	Circle cir;
 	cir.input(7);
 	cir.area();
 	cir.circumference();
 	cir.disp();
-
 
 	// test Cube //
 	Cube c;
@@ -314,7 +362,6 @@ void quicktest(){
 	c.surfacearea();
 	c.diagonal();
 	c.disp();
-
 
 	// test Cuboid //
 	Cuboid b;
@@ -331,12 +378,12 @@ void quicktest(){
 	sp.surface();
 	sp.disp();
 
-
 	system("pause"); // to keep the command prompt open after execution
 }
-int main() {
-	
+int main()
+{
+
 	quicktest();
-	
+	system("cls");
 	return 0;
 }
