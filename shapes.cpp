@@ -1,5 +1,5 @@
 // UNDER DEVELOPMENT>>>+++---
-// calculating different shapes
+// program to calculate different shapes
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -327,63 +327,105 @@ public:
 };
 
 // function to quickly test for the time of development
-void quicktest()
+void Shapes()
 {
-	system("cls"); // to clear windows command prompt
+	system("cls");		// to clear windows command prompt
 	// system("clear"); // to clear linux console
+	int ch;				// input variable
+	do
+	{
+		system("cls");
+		cout << "|-----------------------|" << endl;
+		cout << "| 0.exit                |" << endl;
+		cout << "| 1.Square     4.Cube   |" << endl;
+		cout << "| 2.Rectangel  5.Cuboid |" << endl;
+		cout << "| 3.Circle     6.Sphere |" << endl;
+		cout << "|-----------------------|"	<< endl;
+		cout << "Enter Number To Select:- ";
+		cin >> ch;
 
-	// test Square //
-	Square sq;
-	sq.input(5);
-	sq.area();
-	sq.perimeter();
-	sq.diagonal();
-	sq.disp();
+		if (ch == 1)
+		{
+			system("cls");
+			// test Square //
+			Square sq;
+			sq.input(5);
+			sq.area();
+			sq.perimeter();
+			sq.diagonal();
+			sq.disp();
+			system("pause");
+		}
 
-	// test Rectangel //
-	Rectangel r;
-	r.input(5, 2);
-	r.area();
-	r.perimeter();
-	r.diagonal();
-	r.disp();
-
-	// test circle //
-	Circle cir;
-	cir.input(7);
-	cir.area();
-	cir.circumference();
-	cir.disp();
-
-	// test Cube //
-	Cube c;
-	c.input(3);
-	c.volume();
-	c.surfacearea();
-	c.diagonal();
-	c.disp();
-
-	// test Cuboid //
-	Cuboid b;
-	b.input(2, 4, 3);
-	b.volume();
-	b.surfacearea();
-	b.diagonal();
-	b.disp();
-
-	// test Sphere //
-	Sphere sp;
-	sp.input(4);
-	sp.volume();
-	sp.surface();
-	sp.disp();
-
-	system("pause"); // to keep the command prompt open after execution
+		else if (ch == 2)
+		{
+			system("cls");
+			// test Rectangel //
+			Rectangel r;
+			r.input(5, 2);
+			r.area();
+			r.perimeter();
+			r.diagonal();
+			r.disp();
+			system("pause");
+		}
+		else if(ch == 3)
+		{
+			system("cls");
+			// test circle //
+			Circle cir;
+			cir.input(7);
+			cir.area();
+			cir.circumference();
+			cir.disp();
+			system("pause");
+		}
+		else if(ch == 4)
+		{
+			system("cls");
+			// test Cube //
+			Cube c;
+			c.input(3);
+			c.volume();
+			c.surfacearea();
+			c.diagonal();
+			c.disp();
+			system("pause");
+		}
+		else if(ch == 5)
+		{
+			system("cls");
+			// test Cuboid //
+			Cuboid b;
+			b.input(2, 4, 3);
+			b.volume();
+			b.surfacearea();
+			b.diagonal();
+			b.disp();
+			system("pause");
+		}
+		else if(ch == 6)
+		{
+			system("cls");
+			// test Sphere //
+			Sphere sp;
+			sp.input(4);
+			sp.volume();
+			sp.surface();
+			sp.disp();
+			system("pause");
+		}
+		else if(ch == 0)
+		{
+			system("cls");
+			exit(1);
+		}
+	} while (true);
+	
+	// system("pause"); // to keep the command prompt open after execution
 }
 int main()
 {
-
-	quicktest();
-	system("cls");
+	Shapes();
 	return 0;
 }
