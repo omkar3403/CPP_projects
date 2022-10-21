@@ -18,12 +18,7 @@ public:
 		len = 0;
 		bre = 0;
 	}
-	// temp func test/dev input
-	void input(int l, int b)
-	{
-		len = l;
-		bre = b;
-	}
+
 	// function to get input from user
 	void input()
 	{
@@ -75,16 +70,13 @@ public:
 	{
 		len = 0;
 	}
+	// function to get user input
 	void input()
 	{
 		cout << "Enter length: ";
 		cin >> len;
 	}
-	// test/dev input
-	void input(double l)
-	{
-		len = l;
-	}
+	
 	// function to calculate area
 	void area()
 	{
@@ -129,15 +121,12 @@ public:
 	{
 		radius = 0;
 	}
-	// test/dev input func
-	void input(double r)
-	{
-		radius = r;
-	}
+	
 	// function to get input form user
 	void input()
 	{
 		cout << "Enter radius: ";
+		cin >> radius;
 	}
 	// faunction to calculate area
 	void area()
@@ -177,13 +166,7 @@ public:
 		bre = 0;
 		hei = 0;
 	}
-	// test/dev input
-	void input(double l, double b, double h)
-	{
-		len = l;
-		bre = b;
-		hei = h;
-	}
+	
 	// function to get input form user
 	void input()
 	{
@@ -243,11 +226,7 @@ public:
 		cout << "Enter area: ";
 		cin >> Area;
 	}
-	// test input func
-	void input(double a)
-	{
-		Area = a;
-	}
+	
 	// function to calculate volume
 	void volume()
 	{
@@ -291,11 +270,7 @@ public:
 	{
 		radius = 0;
 	}
-	// test/dev input func
-	void input(double ra)
-	{
-		radius = ra;
-	}
+	
 	// function to get input from user
 	void input()
 	{
@@ -337,9 +312,9 @@ void Shapes()
 		system("cls");
 		cout << "|-----------------------|" << endl;
 		cout << "| 0.exit                |" << endl;
-		cout << "| 1.Square     4.Cube   |" << endl;
-		cout << "| 2.Rectangel  5.Cuboid |" << endl;
-		cout << "| 3.Circle     6.Sphere |" << endl;
+		cout << "| 1.Square  2.Rectangel |" << endl;
+		cout << "| 3.Circle  4.Cube      |" << endl;
+		cout << "| 5.Cuboid  6.Sphere    |" << endl;
 		cout << "|-----------------------|"	<< endl;
 		cout << "Enter Number To Select:- ";
 		cin >> ch;
@@ -349,7 +324,7 @@ void Shapes()
 			system("cls");
 			// test Square //
 			Square sq;
-			sq.input(5);
+			sq.input();
 			sq.area();
 			sq.perimeter();
 			sq.diagonal();
@@ -362,7 +337,7 @@ void Shapes()
 			system("cls");
 			// test Rectangel //
 			Rectangel r;
-			r.input(5, 2);
+			r.input();
 			r.area();
 			r.perimeter();
 			r.diagonal();
@@ -374,7 +349,7 @@ void Shapes()
 			system("cls");
 			// test circle //
 			Circle cir;
-			cir.input(7);
+			cir.input();
 			cir.area();
 			cir.circumference();
 			cir.disp();
@@ -385,7 +360,7 @@ void Shapes()
 			system("cls");
 			// test Cube //
 			Cube c;
-			c.input(3);
+			c.input();
 			c.volume();
 			c.surfacearea();
 			c.diagonal();
@@ -397,7 +372,7 @@ void Shapes()
 			system("cls");
 			// test Cuboid //
 			Cuboid b;
-			b.input(2, 4, 3);
+			b.input();
 			b.volume();
 			b.surfacearea();
 			b.diagonal();
@@ -409,7 +384,7 @@ void Shapes()
 			system("cls");
 			// test Sphere //
 			Sphere sp;
-			sp.input(4);
+			sp.input();
 			sp.volume();
 			sp.surface();
 			sp.disp();
